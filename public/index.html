@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Searcher</title>
+    <script src="https://kit.fontawesome.com/d055287803.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/59b19f5ae5dd5b5264190586/1551742567685-QTRG2WPLA47SLZBIM480/ke17ZwdGBToddI8pDm48kK7_NyBAwO7B2YBsI7f1esuoCXeSvxnTEQmG4uwOsdIceAoHiyRoc52GMN5_2H8Wp6daSJ83-tzelVpZa8fvjA188cCvmt10jnmubPGesbq3vNFsNJ7ybietyxOOm5ckYA/favicon.ico">
+    <link rel="stylesheet" href="https://apeximaging.quickbase.com/db/bqmyj6e44?a=dbpage&pageID=12">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://static.matterport.com/showcase-sdk/2.0.1-0-g64e7e88/sdk.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
+          crossorigin="anonymous">
+    <script language="JavaScript1.2" src="/js/QuickBaseClient.js"></script>   
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <i id="main-toggle" class="fas fa-chevron-left fa-2x"></i>
+        <div clas="wrapper" id="overlay">
+            <div class="row" id="title-gui">
+                <div class="col-md-auto">
+                    <div>Presented By: Apex Imaging Services</div>
+                </div>
+                <div id="model-info"></div>
+            </div>           
+            <div class="row" id="choice-bar">
+                <div class="col-auto toggle" id="tags-toggle" >
+                    Tags
+                </div>
+                <div class="col-auto toggle" id="minimap-toggle" >
+                    Map
+                </div>
+                <div class="col-auto toggle" id="details-toggle">
+                    Details
+                </div>
+            </div>
+            <div id="tags-container">
+                <label id="serach-label" for='search' style="color:white; margin-left: 2vmin;">Search:</label>
+                <input id="search-bar" type="search" aria-label="Search">
+                <label id="reset">Reset</label>
+                <ul id="mt-container">
+                </ul>
+            </div>
+            <div id="minimap-overlay">
+                <img id="pic" class="responsive-img" >
+                <div id="map">
+                </div>
+            </div>
+            <div id="details-overlay">
+                <div id="details"></div>
+            </div>
+        </div>
+        <iframe  title ="model" frameBorder="0" allowFullScreen allow ="vr" id="showcase_iframe"></iframe>
+    </div>
+    <script src="https://apeximaging.quickbase.com/db/bqmyj6e44?a=dbpage&pageID=13"></script>
+</body>
+</html>
