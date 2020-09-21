@@ -14,7 +14,7 @@ const fetch = require('node-fetch');
 function QB() {
     this.headers = null;
     this.body = null;
-    this.responseText = null;
+    this.responseText = null; // This variable is never used we can most likely exclude from class
 }
 
 /*

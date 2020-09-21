@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "image-to-base64": "^2.1.1",
     "node-fetch": "^2.6.1"
   }
 }

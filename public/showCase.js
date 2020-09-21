@@ -79,14 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
     //Entry point to Quickbase implementation
     // setting up Quickbase Client
     var qb = new QuickBaseClient();
-    var rUrl = '23';
-    var rWidth = '18';
-    var rHeight = '19';
-    var rX = '20';
-    var rY = '21';
-    var rRes = '22';
-    qb.SetAppToken('bdh28b6dmzn9c7bemyhd5cngfbde');
-    const TDBID = 'bqndwqe46';
+    var rUrl = '27';
+    var rWidth = '22';
+    var rHeight = '23';
+    var rX = '24';
+    var rY = '25';
+    var rRes = '26';
+    qb.SetAppToken('c3hcgcwxvc9qsbw5iqjhb4gjk94');
+    const TDBID = 'bpefzvu4a';
 
     //Establishin Dom for Quickbase sdk
     var doc = qb.DoQuery(TDBID,'',`${rUrl}.${rWidth}.${rHeight}.${rX}.${rY}.${rRes}`,'3','');
@@ -97,18 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Quickbase breakdown
     var record_id = url.searchParams.get('rd');
-    //Wrote this on Friday sorry if i forget lol
 
-    // Note that this is a quick fix to the offsetting of records ids
-    // The reason for this is because record 28 was deleted which created an offset
-    if(record_id >= 29)
-    {
-        var currRecord = records[record_id - 2].children;
-    }
-    else
-    {
-        var currRecord = records[record_id - 1].children;
-    }
+    var currRecord = records[record_id - 1].children;
+
 
     //Populating floorplan image
     var flrpln = currRecord[0].textContent;
@@ -184,14 +175,14 @@ async function showcaseHandler(mpSdk)
        {
            console.log('on mobile');
        }
-       else
+       /*else
        {
            if(image_details['res'] < 6.70)
              {
                 mapOverlay.style.width = image_details['w'] +'px';
                 mapOverlay.style.height = image_details['h'] + 'px';
              }
-       }
+       }*/
 
     console.log("Connected to Matterport SDK");
     var model = await mpSdk.Model.getData();
@@ -222,7 +213,8 @@ async function showcaseHandler(mpSdk)
     // utilizing js array function map to feed an array of sweeps
     // which is defined as objects with sweep id and x/z coords
     var sweeps = model.sweeps.map((sweep)=> {
-        if(sweep.position)
+        console.log(sweep.floor);
+        if(sweep.position && sweep.floor == 0) // Note that this coniditon only applies to Racetrac due to sweeps on roof
         {
             var marker = {
                 mid: sweep.uuid,
